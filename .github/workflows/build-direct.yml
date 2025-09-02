@@ -1,0 +1,33 @@
+name: Build APK - Direct
+
+on:
+  push:
+    branches: [ main, master ]
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+      
+    - name: Set up Java
+      uses: actions/setup-java@v4
+      with:
+        distribution: 'temurin'
+        java-version: '11'
+        
+    - name: Build APK
+      working-directory: 'Proedition Global Mu 33.1/MobileApp'
+      run: |
+        cd android
+        ./gradlew assembleRelease
+        cd ..
+        
+    - name: Upload APK
+      uses: actions/upload-artifact@v4
+      with:
+        name: ProeditionMobileApp-APK
+        path: "Proedition Global Mu 33.1/MobileApp/android/app/build/outputs/apk/release/app-release.apk"
