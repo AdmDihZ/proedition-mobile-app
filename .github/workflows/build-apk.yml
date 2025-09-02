@@ -39,13 +39,12 @@ jobs:
           ${{ runner.os }}-gradle-
           
     - name: Install dependencies
-      run: |
-        cd "Proedition Global Mu 33.1/MobileApp"
-        npm ci
+      working-directory: 'Proedition Global Mu 33.1/MobileApp'
+      run: npm ci
         
     - name: Build APK
+      working-directory: 'Proedition Global Mu 33.1/MobileApp'
       run: |
-        cd "Proedition Global Mu 33.1/MobileApp"
         cd android
         ./gradlew assembleRelease
         cd ..
