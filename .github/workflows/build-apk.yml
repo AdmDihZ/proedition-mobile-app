@@ -39,18 +39,18 @@ jobs:
           
     - name: Install dependencies
       run: |
-        cd "Cliente Betell Host 33.1/MobileApp"
+        cd "Proedition Global Mu 33.1/MobileApp"
         npm install
         
     - name: Build APK
       run: |
-        cd "Cliente Betell Host 33.1/MobileApp"
+        cd "Proedition Global Mu 33.1/MobileApp"
         cd android
         ./gradlew assembleRelease
         cd ..
         
     - name: Upload APK
-      uses: actions/upload-artifact@v3
+      uses: actions/upload-artifact@v4
       with:
         name: ProeditionMobileApp
         path: "Cliente Betell Host 33.1/MobileApp/android/app/build/outputs/apk/release/app-release.apk"
@@ -86,3 +86,4 @@ jobs:
           **🎮 Jogue Mu Online em qualquer lugar!**
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
