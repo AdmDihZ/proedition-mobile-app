@@ -20,7 +20,6 @@ jobs:
       with:
         node-version: '18'
         cache: 'npm'
-        cache-dependency-path: 'Proedition Global Mu 33.1/MobileApp/package-lock.json'
         
     - name: Set up Java
       uses: actions/setup-java@v4
