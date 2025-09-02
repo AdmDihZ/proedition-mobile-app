@@ -349,3 +349,8 @@ Este projeto está sob a licença **MIT**. Veja o arquivo `LICENSE` para mais de
 ✅ **Documentação Completa**  
 
 **🎯 Pronto para deploy e distribuição!**
+
+🚀 Teste para ativar GitHub Actions
+
+todos os direitos reservador equipe Jogosproedition 
+
